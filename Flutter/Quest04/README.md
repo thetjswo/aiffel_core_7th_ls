@@ -22,12 +22,28 @@
 
 
 # PRT(Peer Review Template)
-- [ ]  **1. 주어진 문제를 해결하는 완성된 코드가 제출되었나요?**
+- [X]  **1. 주어진 문제를 해결하는 완성된 코드가 제출되었나요?**
     - 문제에서 요구하는 최종 결과물이 첨부되었는지 확인
     - 문제를 해결하는 완성된 코드란 프로젝트 루브릭 3개 중 2개, 
     퀘스트 문제 요구조건 등을 지칭
         - 해당 조건을 만족하는 코드를 캡쳐해 근거로 첨부
-윅부분에 잘 기록이 되어있다. 
+```
+   if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        setState(() {
+          result1 = "predicted_label: ${data['predicted_label']}";
+          result2 = "prediction_score: ${data['prediction_score']}";
+        });
+      } else {
+        setState(() {
+          result1 = "Failed to fetch data. Status Code: ${response.statusCode}";
+          result2 = "Failed to fetch data. Status Code: ${response.statusCode}";
+        });
+      }
+```
+[리뷰] 버튼 별 출력 값이 분기처리되어 있는 것을 확인했다.  
+
+
     
 - [ ]  **2. 전체 코드에서 가장 핵심적이거나 가장 복잡하고 이해하기 어려운 부분에 작성된 
 주석 또는 doc string을 보고 해당 코드가 잘 이해되었나요?**
